@@ -7,10 +7,30 @@
 **
 ** La fonction renvoie null en cas d'erreur
 */
-function calculatrice(signe, gauche, droite) {
-    var result = null;
 
-    return result;
+
+
+function calculatrice(signe, gauche, droite) {
+    if (typeof gauche === 'number' && typeof droite === 'number') {
+           if (gauche>=0 && droite<430 && droite!=0) {
+            switch (signe) {
+                case "*":
+                    return gauche*droite;
+                case "+":
+                    return gauche+droite;
+                case "-":
+                    return gauche-droite;
+                case "/":
+                    return gauche/droite;
+                default:
+                    return null;
+            } 
+        } else {
+               return null;
+        }
+    } else{
+        return null;
+    }
 }
  
 module.exports = calculatrice;
